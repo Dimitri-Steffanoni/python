@@ -53,7 +53,7 @@ def job():
     sms()
 #schedule.every(1).minutes.do(job)
 #schedule.every().hour.do(job)
-schedule.every().day.at("20:57").do(job)
+schedule.every().day.at("19:58").do(job)
 
 while 1:
     schedule.run_pending()
