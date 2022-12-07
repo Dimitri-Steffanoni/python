@@ -14,8 +14,8 @@ def sms():
     auth_token = 'b122d189087462200a49a2358beeb9df'
 
     param = {
-        "lat": 40.41,#45.4642,
-        "lon": 3.70,#9.1900,
+        "lat": 45.4642,
+        "lon": 9.1900,
         "appid": api_key
     }
 
@@ -37,7 +37,7 @@ def sms():
         client = Client(account_sid, auth_token)
         message = client.messages \
             .create(
-            body="It's going to rain today. Remember to bring an ☂️",
+            body="It's going to rain in Milan today. Remember to bring an ☂️",
             from_='+19789193325',
             to='+393453398508'
         )
@@ -53,7 +53,7 @@ def job():
     sms()
 #schedule.every(1).minutes.do(job)
 #schedule.every().hour.do(job)
-schedule.every().day.at("19:58").do(job)
+schedule.every().day.at("07:30").do(job)
 
 while 1:
     schedule.run_pending()
